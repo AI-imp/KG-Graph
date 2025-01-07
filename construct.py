@@ -2,13 +2,13 @@
 import pandas as pd
 from py2neo import Graph,Node,Relationship
 ## 连接图形库，配置neo4j
-graph = Graph("http://localhost:7474//browser/",auth = ('neo4j','lzc20180'))
+graph = Graph("http://localhost:7474//browser/",auth = ('username','passwords'))
 # 清空全部数据
 graph.delete_all()
 # 开启一个新的事务
 graph.begin()
 ## csv源数据读取
-storageData = pd.read_csv(r'E:\python\learningproject\konwlegegraph\Data\movieInfo.csv',encoding = 'utf‐8')
+storageData = pd.read_csv('movieInfo.csv',encoding = 'utf‐8')
 # 获取所有列标签
 columnLst = storageData.columns.tolist()
 # 获取数据数量
